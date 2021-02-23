@@ -1,0 +1,155 @@
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h: In instantiation of ‘_OutputIterator std::adjacent_difference(_InputIterator, _InputIterator, _OutputIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<int*, std::vector<int> >; _OutputIterator = seg(std::vector<int>)::<lambda(auto:22, auto:23)>]’:
+t.cpp:17:67:   required from here
+/usr/include/c++/9/bits/stl_numeric.h:344:7: error: no match for ‘operator*’ (operand type is ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’)
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:54,
+                 from t.cpp:1:
+/usr/include/c++/9/complex:391:5: note: candidate: ‘template<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const std::complex<_Tp>&)’
+  391 |     operator*(const complex<_Tp>& __x, const complex<_Tp>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/complex:391:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::complex<_Tp>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:54,
+                 from t.cpp:1:
+/usr/include/c++/9/complex:400:5: note: candidate: ‘template<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const _Tp&)’
+  400 |     operator*(const complex<_Tp>& __x, const _Tp& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/complex:400:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::complex<_Tp>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:54,
+                 from t.cpp:1:
+/usr/include/c++/9/complex:409:5: note: candidate: ‘template<class _Tp> std::complex<_Tp> std::operator*(const _Tp&, const std::complex<_Tp>&)’
+  409 |     operator*(const _Tp& __x, const complex<_Tp>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/complex:409:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   candidate expects 2 arguments, 1 provided
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/valarray_after.h:407:5: note: candidate: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__multiplies, typename _Dom1::value_type>::result_type> std::operator*(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)’
+  407 |     _DEFINE_EXPR_BINARY_OPERATOR(*, __multiplies)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/valarray_after.h:407:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__multiplies, typename _Dom1::value_type>::result_type> std::operator*(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  407 |     _DEFINE_EXPR_BINARY_OPERATOR(*, __multiplies)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/valarray_after.h:407:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__multiplies, typename _Dom1::value_type>::result_type> std::operator*(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  407 |     _DEFINE_EXPR_BINARY_OPERATOR(*, __multiplies)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   candidate expects 2 arguments, 1 provided
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/valarray_after.h:407:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__multiplies, typename _Dom1::value_type>::result_type> std::operator*(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)’
+  407 |     _DEFINE_EXPR_BINARY_OPERATOR(*, __multiplies)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/valarray_after.h:407:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__multiplies, typename _Dom1::value_type>::result_type> std::operator*(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  407 |     _DEFINE_EXPR_BINARY_OPERATOR(*, __multiplies)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   candidate expects 2 arguments, 1 provided
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/valarray:1187:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__multiplies, _Tp>::result_type> std::operator*(const std::valarray<_Tp>&, const std::valarray<_Tp>&)’
+ 1187 | _DEFINE_BINARY_OPERATOR(*, __multiplies)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1187:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::valarray<_Tp>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/valarray:1187:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__multiplies, _Tp>::result_type> std::operator*(const std::valarray<_Tp>&, const typename std::valarray<_Tp>::value_type&)’
+ 1187 | _DEFINE_BINARY_OPERATOR(*, __multiplies)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1187:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’ is not derived from ‘const std::valarray<_Tp>’
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:95,
+                 from t.cpp:1:
+/usr/include/c++/9/valarray:1187:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__multiplies, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__multiplies, _Tp>::result_type> std::operator*(const typename std::valarray<_Tp>::value_type&, const std::valarray<_Tp>&)’
+ 1187 | _DEFINE_BINARY_OPERATOR(*, __multiplies)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1187:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9/numeric:62,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/stdc++.h:84,
+                 from t.cpp:1:
+/usr/include/c++/9/bits/stl_numeric.h:344:7: note:   candidate expects 2 arguments, 1 provided
+  344 |       *__result = __value;
+      |       ^~~~~~~~~
+/usr/include/c++/9/bits/stl_numeric.h:348:5: error: no match for ‘operator++’ (operand type is ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’)
+  348 |    *++__result = __tmp - _GLIBCXX_MOVE_IF_20(__value);
+      |     ^~~~~~~~~~
+/usr/include/c++/9/bits/stl_numeric.h:351:14: error: no match for ‘operator++’ (operand type is ‘seg(std::vector<int>)::<lambda(auto:22, auto:23)>’)
+  351 |       return ++__result;
+      |              ^~~~~~~~~~
+make: *** [Makefile:5: t] Error 1

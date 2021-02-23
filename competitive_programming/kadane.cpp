@@ -44,7 +44,7 @@ auto max_contiguous_subarray_sum_constant_space(const vector<int>& v) -> int
 	int curr_sum = 0;
 	for(const auto& el : v)
 	{
-		curr_sum = max(curr_sum+el , el);
+		curr_sum = max(curr_sum+el, el);
 		max_sum = max(max_sum, curr_sum);
 	}
 	return max_sum;
