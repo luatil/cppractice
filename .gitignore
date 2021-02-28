@@ -1,1 +1,5 @@
 *.out
+*.vscode
+*ac-library
+CppProperties.json
+.vs
