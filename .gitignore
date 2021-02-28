@@ -2,4 +2,5 @@
 *.vscode
 *ac-library
 CppProperties.json
-.vs
+*.vs
+*katctl.pdf
