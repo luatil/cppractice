@@ -1,30 +1,27 @@
 #include <iostream>
+#include <string>
 
-void print_subtracting_two(int n)
+std::string get_reversed_order_subtracting_two(const int n)
 {
+    std::string reversed;
+    reversed.reserve(n/2+1); // That's a mouthfull
     for(int i = n; i > 0; i-= 2)
-    {
-        std::cout << i << ' ';
-    }
+        reversed.push_back(i);
+    return reversed;
 }
 
-void beautiful_permutation(int n)
+std::string beautiful_permutation(const int n)
 {
-    if(n==1)        std::cout << "1";
-    else if(n < 4)  std::cout << "NO SOLUTION";
-    else if(n==4)   std::cout << "2 4 1 3";
-    else 
-    {
-        // This evens/odds or odds/evens combinations works
-        print_subtracting_two(n);
-        print_subtracting_two(n-1);
-    }
-    std::cout << std::endl;
+    if(n == 1) return "1\n";
+    if(n < 4)  return "NO SOLUTION\n";
+    return get_reversed_order_subtracting_two(n-1);
 }
 
 int main()
 {
     int n; 
     std::cin >> n;
-    beautiful_permutation(n);
+    // std::string solution = beautiful_permutation(n);
+    std::string solution = get_reversed_order_subtracting_two(n);
+    std::cout << solution;
 }
