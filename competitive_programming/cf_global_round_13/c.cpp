@@ -1,45 +1,36 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 #define all(v) v.begin(), v.end()
-#define REP(i, n) for(int i = 0; i < n; i++)
-#define ll long long
-
-void jump(vector<ll>& v, int index)
-{
-    while(index < v.size())
-    {
-        int new_index = index + v[index];
-        v[index] -= (v[index] == 1 ? 0 : 1);
-        index = new_index;
-    }
-}
 
 void solve()
 {
     int num_of_trampolines; cin >> num_of_trampolines;
-    vector<ll> trampolines(num_of_trampolines);
-    vector<ll> jumps(num_of_trampolines);
-    for(auto &el : trampolines) cin >> el;
+    vector<int> trampolines(num_of_trampolines);
+    for(auto & el : trampolines) cin >> el;
 
-    ll total_jumps = 0;
+    vector<int> pekoras(num_of_trampolines);
+    long long total_jumps = 0;
+
     for(int i = 0; i < num_of_trampolines; i++)
     {
-        if(trampolines[i] == 1) continue;
-        const int remaining_trampolines = (num_of_trampolines - i) - 1;
-        if(trampolines[i] > remaining_trampolines)
+        if(trampolines[i] > pekoras[i] + 1)
         {
-            const int over_jumps = trampolines[i] - remaining_trampolines -1*(remaining_trampolines==0);
-            total_jumps += over_jumps;
-            trampolines[i] = remaining_trampolines;
+            total_jumps += (trampolines[i]-1)-pekoras[i];
         }
-        for(int j = 0; j < trampolines[i]-1; j++)
+
+        if(pekoras[i] + 1 > trampolines[i])
         {
-            total_jumps +=1;
-            jump(trampolines, i);
+            if(i < num_of_trampolines-1)
+                pekoras[i+1] += 1+pekoras[i]-trampolines[i];
+        }
+
+        for(int j = min(trampolines[i]+i, num_of_trampolines-1); j > i + 1; j--)
+        {
+            pekoras[j]++;
         }
     }
-
     cout << total_jumps << '\n';
 }
 

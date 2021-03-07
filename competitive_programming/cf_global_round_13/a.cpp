@@ -11,7 +11,7 @@ void solve()
 {
     int n, q; cin >> n >> q;
     vector<int> v(n);
-    for(auto&el : v) cin >> el;
+    for(auto & el : v) cin >> el;
 
     int number_of_ones = count(all(v), 1);
 
