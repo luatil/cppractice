@@ -1,0 +1,4 @@
+This is meant as a list of common debug problems
+
+DP
+1. Is the element you are returning the actual optimal solution? Or do you have to search for it first? 
