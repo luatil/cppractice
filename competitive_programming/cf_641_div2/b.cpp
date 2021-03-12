@@ -5,8 +5,8 @@ using namespace std;
 auto find_size_of_biggest_beautiful_arrangement(const vector<int>& sizes) -> long long
 {
     vector<int> dp(sizes.size(), 1);
-    for(int i = sizes.size()-1; i > 0; i--)
-        for(int k = 2; k * i < sizes.size(); k++)
+    for(unsigned int i = sizes.size()-1; i > 0; i--)
+        for(unsigned int k = 2; k * i < sizes.size(); k++)
             if(sizes[i] < sizes[i*k]) 
                 dp[i] = max(dp[i], dp[i*k]+1);
 
