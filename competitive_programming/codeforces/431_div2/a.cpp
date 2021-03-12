@@ -1,4 +1,4 @@
-include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define all(v) v.begin(), v.end()
@@ -25,7 +25,7 @@ void solve()
 			});
 
 
-	const auto total = inner_product(all(s), begin(qs), 0, plus{}, 
+	const auto total = inner_product(all(s), begin(qs), 0, plus<>(), 
 									[&](auto a, auto b)
 									{
 										if(a == 'Q') return total_qas;
