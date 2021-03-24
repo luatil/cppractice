@@ -28,7 +28,7 @@ void ex3()
 
 }
 
-// this is much faster due to cache miss
+// this is much faster due to cache locality
 void ex4()
 {
 	int* array = new int[5 * 5];
