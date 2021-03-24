@@ -1,0 +1,40 @@
+n friends
+m days
+one teammate for each day
+
+any friends can't be choose more than upper(m/2) times
+
+1 <= n, m <= 100'000
+
+4 friends and six days
+4 6
+
+1 1
+2 1 2
+3 1 2 3
+4 1 2 3 4
+2 2 3
+1 3
+
+This really feels like a graph problem. But i am not sure if it is.
+
+A solution looks like 
+for each day: 
+1 2 3 4 5 6
+
+1 2 1 1 2 3
+
+And each is on the adj list of the day
+and the total number of times it appears is not more than 3
+
+So for days that only have a single friend it only makes sense to choose him
+
+1 2 3 4 5 6 
+1 x x x x 3
+
+Brute force solution would look like 
+For each of v[1] test all possible combinations of v[2:]
+
+- At each point get the least used one(priority queue)
+
+

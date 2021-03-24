@@ -1,0 +1,63 @@
+n, m, c, s. 
+
+n, m > 0
+s >= 0
+0 <= c <= m 
+
+a1 = s mod m // s % m 
+ai = (ai-1 + c) mod m | 1 < i <= n
+
+n = 5, m = 7, c = 4, s = 10
+3, 0, 4, 1, 5
+Price is 7
+
+maximize n
+//
+
+6
+1 9 17 6 14 3
+c = 8
+17 + 8 % m = 6
+25 % m = 6
+m = 25 - 6 = 19
+14 + 8 = 22
+22 % 19 = 3
+
+5 
+1 2 3 4 5
+c = 1
+but m can be arbitraliy large 
+For arrays that are always increasing, m = 0
+
+Thinking of using adjacent find for a < b
+
+3 
+4 2 2
+
+adjacent find for a <= b
+c = b - a
+adjacent find for a > b
+m = a + c - b
+
+Then you need to make a test? 
+Yes, generate the whole array and compare one by one
+This solution is linear
+
+m = 19
+c = 8
+s = 1
+Then you generate the whole array
+and compare both of them 
+
+I am having trouble with the case of always descending
+
+3 2 1 
+n = 3
+m = 4 + x
+c = 3 + x
+
+3 2 0 
+n = 3
+m = 4
+c = 3
+

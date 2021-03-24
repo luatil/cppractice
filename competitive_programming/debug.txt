@@ -2,3 +2,5 @@ This is meant as a list of common debug problems
 
 DP
 1. Is the element you are returning the actual optimal solution? Or do you have to search for it first? 
+2. Are you creating an array with one less element needed for the answer?
+3. Make sure that if you are doing iterative dp you are traversing in the correct order
