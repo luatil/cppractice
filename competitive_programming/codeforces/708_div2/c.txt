@@ -1,0 +1,46 @@
+n = 19
+max_lcm = 8
+1 8 8 
+
+n = 21
+max_lcm = 10
+1 10 10
+
+if n == odd
+(1, (n-1)/2, (n-1)/2)
+
+n = 20
+2 9 9 // does not work because LCM is 18
+
+n = 20
+4 8 8 
+
+n = 16
+2 7 7  // nop
+4 6 6 // does not work because LCM is 12
+? 
+
+n = 4
+1 1 2
+
+n = 6
+4 1 1
+
+n = 8
+4 2 2
+
+n = 16
+8 4 4
+
+n = 24
+12 6 6
+
+Therefore:
+
+if n is odd:
+    (1, (n-1)/2, (n-1)/2)
+if n is even: 
+    if n is a power of two 
+        (n/2, n/4, n/4)
+    (4, (n-4/2), n-4/2)
+    

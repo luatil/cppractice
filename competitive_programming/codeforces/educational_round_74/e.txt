@@ -34,3 +34,5 @@ And in terms of an upper bound I am thinking of n' * (m-1). The worst possible s
 is when you have to traverse the whole keyboard at each step. This would be m-1 slowness. 
 
 Hence, we are searching for a solution between n' and n' * (m-1).
+
+

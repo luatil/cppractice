@@ -1,0 +1,12 @@
+n = 1 k1 = 0 k2 = 1
+w = 1 b = 0
+
+NO
+
+// There must be enough white cells in total 
+
+if k1 == k2 
+max white = k1
+
+if k1 > k2
+max white = k2 + (k1-k2)/2
