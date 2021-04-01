@@ -4,19 +4,10 @@ using namespace std;
 #define all(v) v.begin(), v.end()
 #define REP(i, n) for(int i = 0; i < n; i++)
 #define ll long long
-
-template<typename T> 
-void output_vector(T v)
-{
-    for(const auto& el : v) cout << el << ' ';
-    cout << '\n';
-}
+#define vi vector<int>
 
 void solve()
 {
-    int n; cin >> n;
-    vector<int> cost(n);
-    for(auto& el : cost) cin >> el;
 
 }
 
@@ -28,4 +19,3 @@ int main()
     while(t--)
         solve();
 }
-

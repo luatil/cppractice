@@ -1,0 +1,35 @@
+First idea is brute force. 
+
+The first remark is that you much reach a cell either by the top, 
+right, botton or left.
+
+If x == y then f(y, x) == f(y, x-1) + 1 or f(y-1, x) + 1.
+
+So the idea is to use the main diagonal.
+
+When x == y
+If y is odd f(y, x) == f(y,x-1 ) + 1. 
+If y is even f(y, x) == f(y-1, x) + 1.
+
+When x > y. 
+f(y, x) = f(x, x) + x - y if ( x is odd)
+f(y, x) = f(x, x) + y - x if ( x is even)
+
+And when y > x
+f(y, x)  = f(y, y) + y - x if (y is even)
+f(y, x)  = f(y, y) + x - y if (y is odd)
+
+f(1, 1) = 1 // base case
+
+And the final remark is that f(x, x) == 1 + x * x-1.
+
+Case analysis: 
+
+Recursion problem. With some elementary number theory. 
+Constant time and space.
+
+So it does work. Main issue here is that c++ does not have a good way to 
+deal with really large numbers. So python to the rescue. This is the typical 
+problem where a python solution is better than a c++ one. Constant time, so 
+python slowness does not become an issue. And really large numbers, something 
+that python is really good at. 

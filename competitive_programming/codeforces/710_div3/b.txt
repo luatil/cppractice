@@ -1,0 +1,4 @@
+.**.***
+.x*.***
+.x*.**x
+The distance between two x's must not exceed k

@@ -17,7 +17,7 @@ auto max_contiguous_subarray_sum(const vector<int>& v) -> int
 {
 	vector<int> memo;
 	memo.reserve(v.size());
-	inclusive_scan(v.begin(), v.end(), back_inserter(memo), [](auto a, auto b)
+	partial_sum(v.begin(), v.end(), back_inserter(memo), [](auto a, auto b)
 			      {return max(b, b+a);});
 	print(memo);
 	return *max_element(memo.begin(), memo.end());

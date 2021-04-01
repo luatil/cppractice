@@ -1,0 +1,38 @@
+First idea here is to generate all possible permutations of N with 
+next permutation, try the reversort and check if it has the cost. This would pass 
+the first test case but not the second.
+
+I believe there could be some bitmask wizardry here. But with N == 100 this could be hard. 
+
+AFTERTHOUGTS:
+
+Okay so the idea is constructive/greedy
+
+There is a value for the bounds of the problem
+
+For n = 7 and x = 12
+
+1 2 3 4 5 6 7
+
+The minimum possible is n-1: 6
+
+And the maximum possible is n*n-1/2: 21
+
+Now we need to find a way to climb from the lower bound to the upper bound. 
+
+That is:
+
+1 2 3 4 5 6 7 -> 6
+2 1 3 4 5 6 7 -> 7
+3 2 1 4 5 6 7 -> 8
+
+-------------
+4 2 3 1 5 6 7 -> ? 10
+1 3 2 4 5 6 7 -> 
+Here I start to think of some sort of DP. 
+
+In a sense that once you choose some value on the left you can stop thinking about it. 
+
+And we would want to minimize dp(i) - C;
+
+7 2 3 4 5 6 1 -> 12 // nope it is 16.

@@ -1,11 +1,8 @@
 CC=g++
-FLAGS=-std=c++17 -Wall -Wextra -Wshadow -Wno-sign-conversion -ggdb3
-BINS=acode_alphacode.out
+FLAGS=-std=c++11 -Wall -Wextra -Wshadow -Wno-sign-conversion -ggdb3
 
-all: $(BINS)
-
-%.out: %.cpp
+t: t.cpp
 	$(CC) $(FLAGS) -o $@ $^
 
-clean: 
-	rm $(BINS)
+%: %.cpp
+	$(CC) $(FLAGS) -o $@ $^

@@ -1,0 +1,16 @@
+11
+11, 2
+12, 3 
+
+31, 4
+32, 5
+33, 6
+
+AFTERTHOUGTS:
+
+I should've been able to solve this one faster. I got the right idea from the get go.
+But I was afraid it would be too slow/overflow. 
+
+Main error was to use int instead of long long. I got to get used to ll instead of int.
+
+

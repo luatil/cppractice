@@ -1,0 +1,28 @@
+So here I already came across a similar problem and know that for 
+a 64 grid the answer is 32. You just put them in the dark squares and 
+you don't attack each other. 
+
+Oh, but the idea is count the ways two knights can be placed on a k*k such 
+that they don't attach each other.
+
+Having dp thoughts. 
+
+Upper bound lower bound thinking. 
+
+I think that an upper bound for n is going to be n * (n-8) / 2
+Each knight can attack up to 8 squares, and so for each for each position you can 
+put a knight over there. And another one on n-8 positions.
+
+The problem is that not all knight attack 8 positions. If you place one in the corner
+for instance it would only attack 2 squares. 
+
+So I think that the total expression is of the form: 
+
+k8 * (n-8) / 2 + k6(n-6) / 2 + k4 * (n-4) / 2 + k2 * (n-2) /2
+
+sum(ki * (n-i)) for i in {2..8} /2 
+
+Okay so k2 is going to be equal to 4 for any n > 2. You have four corners in each case. 
+k3 = 8 for n >= 4
+k4 is going to be equal to (n-4) * 4. plus some weird positions
+k5 
