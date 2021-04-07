@@ -20,8 +20,28 @@ using pi = pair<int,int>;
 
 const ll inf = numeric_limits<ll>::max() / 4;
 const ll MOD = ll(1e9) + 7;
+const int N = 1e6+55;
+
+ll memo[N];
+
+ll dp(int n) {
+    if(n < 0) return 0;
+    if(n == 0) return 1;
+
+    if(memo[n] != -1) return memo[n];
+
+    memo[n] = 0;
+    for(int i = 1; i <= 6; ++i) {
+        memo[n] = (memo[n] + dp(n-i)) % MOD;
+    }
+
+    return memo[n];
+} 
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
+    memset(memo, -1, sizeof(memo));
+    int n; cin >> n;
+    cout << dp(n) << '\n';
 }

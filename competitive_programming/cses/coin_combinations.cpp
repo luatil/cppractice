@@ -7,7 +7,7 @@ template <typename T> using oset = tree<T,null_type,less_equal<T>,rb_tree_tag, t
 
 using ll = long long;
 
-using vi = vector<int>;
+using vi = vector<ll>;
 #define pb push_back
 #define rsz resize
 #define all(x) begin(x), end(x)
@@ -24,4 +24,18 @@ const ll MOD = ll(1e9) + 7;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
+    int n, x; cin >> n >> x;
+    vi v(n);
+    for(auto&el : v) cin >> el;
+
+    vi memo(x+1);
+    memo[0] = 1;
+    for(int i = 1; i <= x; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i - v[j] >= 0) {
+                memo[i] = (memo[i] + memo[i - v[j]]) % MOD;
+            }
+        }
+    }
+    cout << memo[x] << '\n';
 }

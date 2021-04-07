@@ -1,0 +1,56 @@
+Overall: 
+
+Solved A, had the right idea for B but missed a detail an messed up the implementation. Yet i 
+was able to read and kinda understand most of the problems. 
+
+Placement: 6359
+
+A. Deja Vu: 00:11
+
+Constructive 800
+
+I had the right idea here. It's not possible to make a string that is not a palindrome 
+by inserting an element onto it if all of the elements are equal to 'a'. 
+
+I should have used all_of instead of count == s.size(). And I did not do a good function 
+to check if a string was or not a palindrome. 
+
+The better versions would be:
+
+all_of(all(s), [](auto e){ return e == 'a';});
+
+And:
+
+equal(s.begin(), s.begin() + s.size()/2, s.rbegin());
+
+Both are not on anki.
+
+B. Flip the Bits: xx:xx
+
+Greedy implementation math 1200
+
+I got the right idea to solve it. It was a divide and conquer type of algorithm. 
+The key observation is that the ranges can be dealt in a disjoint manner. And them 
+you just have to check if they are opposite for each range. 
+
+I missed the implementation detail that you can't change the last range. And eventually 
+tought that my algorithm was wrong in conception or that I had a bug. 
+
+In the beginning I also made the mistake of not thinking of the first range. 
+
+Overall I had the right idea. But did not think through the edge cases and had some trouble with 
+implementation. 
+
+I tried lot's of different implementations. 
+
+The recursive version was probably the most clean implementation. I think this reflects the divide 
+and conquer nature of the problem.
+
+Maybe it is better to have the starting and end of each loop before hand. 
+
+I think the last implementation is a clean one.
+
+But the implementation of monogon is so clean. You just need to think about the transition. 
+And instead of keeping (i+1)/2 == cnt. You can just use cnt += (a[i] == '1') - (a[i] == '0');
+
+

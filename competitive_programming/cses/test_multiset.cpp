@@ -19,9 +19,23 @@ using pi = pair<int,int>;
 #define mkp make_pair
 
 const ll inf = numeric_limits<ll>::max() / 4;
-const ll MOD = ll(1e9) + 7;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
+    multiset<int> st = {1, 2, 2,3, 3, 4};
+    for(const auto&el : st) {
+        cout << el << ' ';
+    }
+    cout << '\n';
+    st.erase(2);
+    for(const auto&el : st) {
+        cout << el << ' ';
+    }
+    cout << '\n';
+    st.erase(st.find(3));
+    for(const auto&el : st) {
+        cout << el << ' ';
+    }
+    cout << '\n';
 }
