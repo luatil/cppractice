@@ -1,0 +1,22 @@
+3 5 5 7 8 
+3 4 8
+
+Greedy 1:
+Iterate over the maximum ticket price for each customer(bottom row). 
+Pick the highest priced ticket that is below or equal the maximum price. 
+Remove said ticket from the the available prices. 
+
+For the above case this pairing would be 
+{{3, 3}, {4, -1}, {8, 8}}
+
+Consider the function MS, that measures the amount of pairings. We want to maximize 
+MS. 
+
+Feasibility: 
+This does not give a not valid answer because you are removing the tickets
+from the pool and are only picking tickets that are within your paying range. 
+Therefore satisfying the problem constraints. 
+
+Perhaps for the formal argument it is better to use a set of tickets and 
+customers, with a function describing the price of said ticket and maximum
+price the customer is willing to pay instead of using a multiset. 

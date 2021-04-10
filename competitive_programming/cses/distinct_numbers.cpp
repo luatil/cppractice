@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define ll long long
-
-const int N = 2*(1e5) + 434;
-int a[N];
-int b[N];
-
+ 
 int main() 
 {
-    int n, m, k; cin >> n >> m >> k;
-    for(int i = 0; i < n; i++) {
-        cin >> a[i];
+    int n; cin >> n;
+    set<int> st;
+    int temp;
+    for(int i = 0; i < n; ++i) {
+        cin >> temp;
+        st.insert(temp);
     }
+    cout << st.size() << '\n';
 }
