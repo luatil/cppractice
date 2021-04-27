@@ -25,6 +25,7 @@ const ll MOD = ll(1e9) + 7;
 const int MAXN =2*1e5+55;
 // const int MAXN = 10;
 
+// 0 indexed
 struct SegmentTree {
     int n, t[4*MAXN];
     vector<int> a;
@@ -37,7 +38,7 @@ struct SegmentTree {
         return x ^ y;
     }
 
-    const ll query_return = 0;
+    const ll identity = 0;
 
     void build(int v, int tl, int tr) {
         if(tl == tr) {
@@ -52,7 +53,7 @@ struct SegmentTree {
 
     ll query(int v, int tl, int tr, int l, int r) {
         if(l > r) {
-            return query_return;
+            return identity;
         }
         if(l == tl && r == tr) {
             return t[v];

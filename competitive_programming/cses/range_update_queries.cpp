@@ -21,30 +21,82 @@ using pi = pair<int,int>;
 const ll inf = numeric_limits<ll>::max() / 4;
 const ll MOD = ll(1e9) + 7;
 
+struct SegTree {
+    vi a, t;
+    int n;
+
+    SegTree(const vector<ll>&b) {
+        a = b;
+        this->n = a.size();
+        t.resize(4*n+1);
+        build(1, 0, n-1);
+    }
+
+    void build(int v, int tl, int tr) {
+        if(tl == tr) {
+            t[v] = a[tl];
+        } else {
+            int tm = (tl+tr)/2;
+            build(v*2, tl, tm);
+            build(v*2+1, tm+1, tr);
+            t[v] = 0;
+        }
+    }
+
+    void update(int v, int tl, int tr, int l, int r, int add) {
+        if(l > r) 
+            return;
+        if(l == tl && r == tr) {
+            t[v] += add;
+        } else {
+            int tm = (tl+tr)/2;
+            update(v*2, tl, tm, l, min(r, tm), add);
+            update(v*2+1, tm+1, tr, max(l, tm+1), r, add);
+        }
+    }
+
+    ll get(int v, int tl, int tr, int pos) {
+        if(tl == tr)
+            return t[v];
+        int tm = (tl + tr) /2;
+        if(pos <= tm)
+            return t[v] + get(v*2, tl, tm, pos);
+        else 
+            return t[v] + get(v*2+1, tm+1, tr, pos);
+    }
+
+    void increase(int l, int r, int val) {
+        update(1, 0, n-1, l, r, val);
+    }
+
+    ll query(int k) {
+        return get(1, 0, n-1, k);
+    };
+};
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
     int n, q; cin >> n >> q;
-    vi v(n+1);
-    for(int i = 1; i <= n; i++) cin >> v[i];
+    vi v(n);
+    for(auto&el : v) cin >> el;
 
-    vi prefix;
-    prefix.reserve(n+2);
-    adjacent_difference(all(v), back_inserter(prefix));
+    SegTree range(v);
 
-    int temp, k, a, b, u;
+    int temp;
     while(q--) {
         cin >> temp;
         if(temp == 1) {
-            cin >> a >> b >> u;
-            prefix[a] += u;
-            prefix[b+1] -= u;
+            // Increase [a, b] by val 
+            int a, b, val; cin >> a >> b >> val;
+            a--; b--;
+            range.increase(a, b, val);
         } else {
-            cin >> k;
-            partial_sum(prefix.begin(), prefix.begin() + k + 1, prefix.begin());
-            cout << prefix[k] << '\n';
-            adjacent_difference(prefix.begin(), prefix.begin() + k + 1, prefix.begin());
+            // Query value at k
+            int k; cin >> k;
+            k--;
+            cout << range.query(k) << '\n';
         }
     }
 }

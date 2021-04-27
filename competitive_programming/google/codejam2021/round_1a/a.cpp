@@ -1,29 +1,57 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-template <typename T> using oset = tree<T,null_type,less_equal<T>,rb_tree_tag, tree_order_statistics_node_update>;
-
 using ll = long long;
 
-using vi = vector<int>;
-#define pb push_back
-#define rsz resize
-#define all(x) begin(x), end(x)
-#define sz(x) (int)(x).size()
+ll min_num(ll a, ll b) {
 
-using pi = pair<int,int>;
-#define f first
-#define s second
-#define mkp make_pair
+    if(a == b) {
+        return a * 10;
+    }
 
-const ll inf = numeric_limits<ll>::max() / 4;
-const ll MOD = ll(1e9) + 7;
+    if(a % 10 == 9) {
+        while(b < a) {
+            b *= 10;
+        }
+        return b;
+    }
+
+    ll na = a, nb = b;
+    while(na > 0) {
+        if(na == b) {
+            return a + 1;
+        }
+        na /= 10;
+    }
+
+    while(b < a) {
+        b *= 10;
+    }
+
+    return b;
+
+}
 
 void solve(int index)
 {
-    cout << "Case #" << index << ": " << 3 << '\n';
+    int n; cin >> n;
+    ll ans = 0;
+    ll a, b;
+    cin >> a;
+    for(int i = 1; i < n; i++) {
+        cin >> b; 
+
+        if(b > a) {
+            a = b;
+            continue;
+        } else {
+            ll nb = min_num(a, b);
+            ans += (int)log10(nb) - (int)log10(b);
+            a = nb;
+        }
+
+    }
+    cout << "Case #" << index << ": " << ans << '\n';
 }
 
 

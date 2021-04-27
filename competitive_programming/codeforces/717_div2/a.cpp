@@ -21,42 +21,33 @@ using pi = pair<int,int>;
 const ll inf = numeric_limits<ll>::max() / 4;
 const ll MOD = ll(1e9) + 7;
 
-const int MAXN = 1e5 * 2 + 55;
-vi adj[MAXN];
-bool visited[MAXN];
-bool color[MAXN];
-#define RED 1
-#define BLUE 0
-int blues = 0, reds = 0;
-int color_num[2];
+void solve()
+{
+    int n, k; cin >> n >> k;
+    vi v(n);
+    for(auto&el : v) cin >> el;
 
-void dfs(int i, int c) {
-    c ^= 1;
-    visited[i] = true;
-    for(auto&el : adj[i]) {
-        if(!visited[el]) {
-            color_num[c]++;
-            dfs(el, c);
+    int index = 0;
+    while(k--) {
+        while(v[index] == 0) {
+            index++;
         }
+        if(index >= n-1) break;
+        v[index]--;
+        v[n-1]++;
     }
+
+    for(auto&el : v) cout << el << ' ';
+    cout << '\n';
 }
 
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0);
-
-    int n; cin >> n;
-    int a, b;
-    for(int i = 1; i < n; i++) {
-        cin >> a >> b;
-        adj[a].pb(b);
-        adj[b].pb(a);
+    int t; cin >> t;
+    while(t--) {
+        solve();
     }
-
-    color_num[RED] = 1;
-    color[1] = RED;
-    dfs(1, RED);
-
-    cout << min(color_num[0], color_num[1]) << '\n';
 }

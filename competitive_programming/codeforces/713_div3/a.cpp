@@ -21,42 +21,44 @@ using pi = pair<int,int>;
 const ll inf = numeric_limits<ll>::max() / 4;
 const ll MOD = ll(1e9) + 7;
 
-const int MAXN = 1e5 * 2 + 55;
-vi adj[MAXN];
-bool visited[MAXN];
-bool color[MAXN];
-#define RED 1
-#define BLUE 0
-int blues = 0, reds = 0;
-int color_num[2];
+void solve(int index)
+{
+    int n; cin >> n;
+    vi v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
 
-void dfs(int i, int c) {
-    c ^= 1;
-    visited[i] = true;
-    for(auto&el : adj[i]) {
-        if(!visited[el]) {
-            color_num[c]++;
-            dfs(el, c);
+    int eq;
+    if(v.back() == v.front()) {
+        eq = v.back();
+    } else {
+        if(v[1] == v[0]) {
+            eq = v[0];
+        } else {
+            eq = v.back();
         }
     }
+
+
+    for(int i = 0; i < n; i++) {
+        if(v[i] != eq) {
+            cout << i + 1 << '\n';
+            return;
+        }
+    }
+    
 }
 
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0);
-
-    int n; cin >> n;
-    int a, b;
-    for(int i = 1; i < n; i++) {
-        cin >> a >> b;
-        adj[a].pb(b);
-        adj[b].pb(a);
+    int t; cin >> t;
+    int index = 1;
+    while(t--) {
+        solve(index);
+        index++;
     }
-
-    color_num[RED] = 1;
-    color[1] = RED;
-    dfs(1, RED);
-
-    cout << min(color_num[0], color_num[1]) << '\n';
 }
