@@ -1,0 +1,13 @@
+This is meant as a list of common debug problems
+
+General
+1. Multiple test cases and the first result is right. Check if you are cleaning your globals.
+2. Have you tried the smallest/largest cases?
+
+DP
+1. Is the element you are returning the actual optimal solution? Or do you have to search for it first? 
+2. Are you creating an array with one less element needed for the answer?
+3. Make sure that if you are doing iterative dp you are traversing in the correct order
+
+Array type
+1. Does the main strategy change in the edges of the array? 

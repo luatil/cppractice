@@ -1,0 +1,92 @@
+The problem is resumed by which order should the 
+balls of the same color be picked.
+
+If I had:
+
+3 2 1 2 1 2 3
+
+I know that I would pick the leftmost 2 first or last. 
+Ths can be expanded to all the colors. I can pick the leftmost
+element k first or last, and the rightmost first or last.
+
+Thus we have a decision problem, for each color c do we choose 
+to pick the lefmost first or the rightmost first.
+
+So, let's see if I understand this. 
+
+Okay, so for each color you would have end your traversal of picking this color
+at a point in the array. 
+
+Let f(i) denote the position you took the last ball of color i. 
+
+So for the example:
+
+1 2 3 4 5 6 7
+3 2 1 2 1 2 3
+
+f(1) could be 3, 5
+f(2) could be 2, 4 or 6
+f(3) could be 1 or 7
+
+We can further reduce the problem by observing that it is never optimal to stop
+at a place other than the rightmost or leftmost element. 
+
+For instance, it does not make sense for f(2) to be 4. Because I would have to either
+go all the way to 6, then pass by 4 and not take it, go to two and them go back. Or the
+other way around. 
+
+This simplifies our problem to selecting for each i if we end up at the lefmost or rightmost
+element of the array. In other words: 
+
+f(1) could be 3 or 5
+f(2) could be 2 or 6
+f(3) could be 1 or 7
+
+A simple solution using this would be to generate the 2^n possible choices 
+and see which one is best. But this would result in a TLE. Given that N has 2*1e5 as an upper bound.
+
+DP to the rescue. 
+
+We can then define dp(i, j) where i represents the color and j in {0, 1} represents if we picked 
+lefmost or rightmost for the last one. 
+
+Here consider the functions L and R that given a color return the lefmost and rightmost position 
+of it respectly. L(1), for example, should return 3, and R(3), 7. 
+
+Then our transition could be:
+
+dp(i, j):
+    if j == 0:
+        R(i) - L(i) + min(dp(i-1, 0) + abs(L(i-1) - R(i)), dp(i-1, 1) + abs(R(i-1) - R(i))))
+    if j == 1:        
+        R(i) - L(i) + min(dp(i-1, 0) + abs(L(i-1) - L(i)), dp(i-1, 1) + abs(R(i-1) - L(i))))
+
+A way to think of this is that a lower bound cost I can have for some color i is R(i) - L(i). In the best case cenario 
+I start at L(i) and go to R(i) or vice versa. And then for my previous state I am considering the four possible cenarios, 
+Ending at the x of the previous, going to the y of the current first. The 4 combinations of {lefmost, rightmost} can be 
+substituted for the x and y of the previous sentence. 
+
+j == 0 means that I am ending the ball I at the lefmost. And j == 1, the righmost. 
+The rest should make sense. 
+
+
+And this is a linear algorithm, which fits our description. 
+
+One way to implement the L and R functions would be to use a table and then keep a min and max of each one. 
+This being done. All that is required is doing the dp. And handling the problem of going back to the start. 
+
+So I think that the original problem is for n colors. 
+
+min(R(N) + dp(n, 1), L(N) + dp(n, 0))
+
+We also have to treat the case where i == 1, 
+
+But I think that for the first color it only makes sense for the answer to be R(i).
+
+What could we further gain from this problem? 
+
+- How to retrieve the path? 
+- What is the topological order? 
+- How to think of it as a shortest paths problem? 
+- Could we solve it in constant space?
+

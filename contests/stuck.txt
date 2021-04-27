@@ -1,0 +1,9 @@
+1. Why the greedy solution fails? 
+2. Which problem you already solved most resemble this one? 
+3. Is there an case for which the solution is easy? 
+4. Is there an easier version of the same problem?
+5. What are some bounds for the answer?
+6. What would be nice if it were true?
+7. How could you always achieve the upper/lower bound?
+8. Can you change the equation? 
+9. Have you tried going backwards? Changind the verb from active to passive. 

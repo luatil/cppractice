@@ -1,0 +1,38 @@
+6 3
+aacabc
+
+So I have to consider all the permutations of {a, b, c}. 
+But this is a n! time. 
+
+Therefore I am starting to consider the change of [a, b, c]
+to {a, b, c}(a) vs {a, b, c}(b) vs {a, b, c}(c).
+
+This would be 2^m * m*m, I think. And I believe this works. 
+It cannot be m*n in the last term, as this would be too slow. 
+
+Okay, this is not enough. 
+
+Here I am thinking that duplicates cost 0. 
+
+Hence, the problem aacabc is equivalent to the problem acabc.
+
+You can use std::unique to remove the adjacent duplicates, this takes linear
+time. And I think is a good first processing. 
+But in the lower bound, you can have 0 adjacent duplicates, which makes this 
+not so useful in the worst case. 
+
+For:
+abac
+
+abc is worst than bac, 
+
+Well, this makes me think of the lower bound of the problem. Let n' be the new length
+of the string after removing duplicates, then the minimum possible cost is n'. Because
+at each change you have to add at least 1 in slowness.
+
+And in terms of an upper bound I am thinking of n' * (m-1). The worst possible slowness
+is when you have to traverse the whole keyboard at each step. This would be m-1 slowness. 
+
+Hence, we are searching for a solution between n' and n' * (m-1).
+
+

@@ -1,0 +1,56 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+template <typename T> using oset = tree<T,null_type,less_equal<T>,rb_tree_tag, tree_order_statistics_node_update>;
+
+using ll = long long;
+
+using vi = vector<int>;
+#define pb push_back
+#define rsz resize
+#define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
+
+using pi = pair<int,int>;
+#define f first
+#define s second
+#define mkp make_pair
+
+const ll inf = numeric_limits<ll>::max() / 4;
+const ll MOD = ll(1e9) + 7;
+
+int table[34];
+
+void solve(int index)
+{
+    // This feels like dp
+    int n; cin >> n;
+    ll ans = 0, temp;
+    for(int i = 0; i < n; i++) {
+        cin >> temp; 
+        for(int j = 0; j < 32; j++) {
+            if(temp >> j & 1) { 
+                table[j]++;
+            }
+        }
+    }
+
+    cout << (ans == 0 ? "YES\n" : "NO\n");
+
+
+}
+
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t; cin >> t;
+    int index = 1;
+    while(t--) {
+        solve(index);
+        index++;
+    }
+}

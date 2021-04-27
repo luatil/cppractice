@@ -1,0 +1,3 @@
+DP 
+
+1. Not initializing the first state correctly

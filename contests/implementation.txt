@@ -1,0 +1,1 @@
+1. Can you alter the input without changing the answer in a way that would help? 

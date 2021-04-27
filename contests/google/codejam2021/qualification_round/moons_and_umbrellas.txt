@@ -1,0 +1,53 @@
+He must pay X for every time CJ appears and Y for every time JC appears
+
+My first instinct here is to solve it using some sort of dp
+
+So brute force solves the first test set but it is to bad to solve the second
+
+CJ?CC?
+
+In some sense it only matters if there are more than one ? 
+
+Otherwise:
+
+J?J you would always put J
+
+C?C you would always put C
+
+Nope, C?J is gonna cost CJ one way or the other
+
+And in cases you had ??
+
+C??C
+It only counts those that are different:
+
+C??J and J??C
+
+But this would give 4 distinct cases
+
+CCCJ and CJJJ and JCCC versus JJJC
+
+That is, both of them cost the same.
+
+So the algorithm idea is to find the ?. 
+
+Given A??..??B, if A==B add 0. Else if A == C and B == J add X, and if A == J and B == C you must pay Y.
+
+This is linear and solves both 1 and 2 test cases.
+
+
+For the negative test set 3 you would need some sort of DP in my mind.
+
+AFTERTHOUGTS:
+
+Thinking here of the whole - introoduce suitable notation - type of thing.
+
+I think the solution got quite clear. Also there is quite a valuable representation of this 
+problem as a shortest path problem. 
+
+Here it is also interesting the notion of using infinity for unreachable states. This could 
+substantially simplify some implementations.
+
+Also using #define C 0 for the state reduces some mental effort. Here I got a bug of
+initializing the first states states incorrectly. Also naming the costs x and y was a bad idea. 
+I should've named them cost_cj and cost_jc. Or something more trie friendly. 

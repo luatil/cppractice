@@ -1,0 +1,5 @@
+5 16
+1 2 8 4 8
+
+okay, so bounds are 1 and n
+1 if w <= sum(v) n if for 

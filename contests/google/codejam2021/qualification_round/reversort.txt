@@ -1,0 +1,37 @@
+Okay, so now considering:
+
+1 2 3 4 5 6 7
+-------------
+7 6 5 4 3 2 1
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+
+Okay, so now i am considering two possible solution. 
+One of them is to simulate the algorithm. this would take O(N^3) time. It would pass the test set 1, but probably not another one.
+
+On the other hand I think there may be a mathematical formula for finding it. Like it is some constant or shit. 
+
+Okay, but:
+
+1 2 3 4 5 6 7
+-------------
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+
+Will have a minimum cost of 6
+
+So the problem has some sort of lower bound. N-1 for arrays that are already sorted. 
+
+I am thinking now of doing some sort segment tree structure. The expensive procedure 
+here is to reverse the list and to keep track of where the min value is. So I am thinking
+of something like a data structure that can answer me what's the minimum in the range i, j
+while being easily updated after a reverse operation. 
+
+
